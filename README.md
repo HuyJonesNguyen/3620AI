@@ -1,49 +1,68 @@
-# COMP3620/6320 Assignment 1: Search
+# Assignment 1: Search
 
-This is the GitLab repository for COMP3620/6320 Assignment 1. To get started:
+## Introduction
 
-1. Click the `Fork` button at the top of the page to fork the repo.
-2. If asked for a namespace, choose your name.
-3. As you go through the assignment, push changes regularly to your forked
-   repo. The files we expect you to change are the following:
-   - `a_star_search.py`
-   - `brfs_search.py`
-   - `heuristics.py`
-   - `ids_search.py`
-   - `minimax_agent.py`
+In this assignment we will explore the use of search strategies to solve a
+single agent search problem with a single or multiple goals, and a two-player
+game with complete information. In order to illustrate their execution, we have
+wrapped everything up into a mash-up of Angry Birds. In every exercise, the
+agent controlled is represented by a red dot (if you look really hard into it,
+you'll eventually see the infamous face of Red, an Angry Bird character).
 
-The deadline for Assignment 1 is **Monday 25 March 2024 at 6pm**. To submit the
-assignment, you simply need to make sure that you have pushed all of your
-answers before the deadline. You must not push any more commits after the
-deadline has passed.
+In the first part, you will have to implement uninformed and informed search
+strategies for the graph-search algorithm presented in the Lectures. This
+includes Breadth-First Search, Iterative Deepening Search, and A*. Then,
+relying on your implementation of A*, you will do some work with heuristics.
+You will be provided with the necessary data structures for
 
-Remember that the marks you receive for the assignment depends on correctness,
-efficiency of the solutions. Please note your submission will be assessed by an
-auto marker. If the code submitted does not run properly, it will receive no mark.
+1. the state representation
+2. the successor function
+3. goal test
+4. cost of actions
 
-It is recommended to write detailed comments in your code, not only because
-it is a good coding practice, but also because it supports you if our plagiarism
-checking system reports any issues about your code.   
+Then we will move onto _Heuristics_. Remember that a heuristic is a function
+that, given a state _s_, estimates the remaining cost to reach a _goal_ state
+from _s_. You will be required to produce an admissible heuristic estimate for
+the multi-goals variant of the problem, where the agent has to plan its actions
+to collect not one, but multiple yellow-birds.
 
-For all of the assignments in this course:
+In the second part, the task is a two-player game where your code will control
+one of the players (the Red player). We will ask you to implement some basic
+adversarial search algorithms, namely, MiniMax. As the depth of the search tree
+for this problem can be huge, it is difficult to reach the solution. For this
+reason you will be asked to implement a depth-bounded version of the algorithm,
+together with an _evaluation function_, which is meant to produce a numeric
+estimate of the _utility_ of a given game state for a given player.
 
-- You can import the following packages: argparse, collections, copy, datetime,
-  functools, glob, heapq, itertools, json, logging, math, matplotlib,
-  multiprocessing, random, numpy, operator, os, pandas, pathlib, platform,
-  pickle, pprint, queue, re, string, subprocess, sys, time, typing.
-- You cannot import: scipy, networkx.
+You can find a _description of the search problems_ on the section [Getting
+Started](1_getting_started.md).
 
-Ready to start? Go to [handout/README.md](handout/README.md) and follow the
-instructions there completing each of the tasks set for you.
+## What to Submit
 
-## Copyright Notice
+In each subsection, you will find the description of the files you are required
+to edit/submit. Remember to follow the submission rules published on Wattle.
 
-Copyright subsists in all the material on this repository and vests in the ANU
-(or other parties). Any copying of the material from this site other than for
-the purpose of working on this assignment is a breach of copyright.
+## Common Errors
 
-In practice, this means that you are not allowed to make any of the existing
-material in this repository nor your assignment available to others (except to
-the course lecturers and tutors) at any time before, during, or after the
-course. In particular, you must keep any clone of this repository and any
-extension of it private at all times.
+Note for Windows users: Make sure that you install Python in a path that
+doesn't contain any spaces (e.g. don't put it in `Program Files`). Otherwise
+the program will fail.
+
+We recommend using [Anaconda Python](https://www.anaconda.com/download/) to do the assignments.
+
+If you're using a CSIT lab computer, you need to use the `Anaconda3 shell`
+to run Python (don't use the built-in terminal). Ask your tutor if you don't
+know what this means.
+
+It's important that you use Python 3.6 or later. If you use an earlier Python
+version, you might get `SyntaxError: invalid syntax` on the type annotations.
+
+## Walkthrough
+
+1. [Getting Started: The Search Problems](1_getting_started.md)
+2. [Implementing Search Algorithms: The Fundamentals](2_implementation_notes.md)
+3. [Question 1: Breadth-First Search (3 Marks)](3_breadth_first_search.md)
+4. [Question 2: Iterative Deepening Search (3 Marks)](4_iterative_deepening_search.md)
+5. [Question 3: A\* (4 Marks)](5_a_star.md)
+6. [Question 4: Heuristics for Single-Agent Search Problems (4 Marks)](6_heuristics.md)
+7. [Question 5: Minimax (3 Marks)](7_minimax.md)
